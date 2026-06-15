@@ -10,9 +10,11 @@ import { ReaderMapper } from './reader.mapper';
 import { UserService } from '../user/user.service';
 import { ReadingCard } from '../reading-card/reading-card.entity';
 import { BorrowRecord } from '../borrow-record/borrow-record.entity';
+import { ReturnRecord } from '../return-record/return-record.entity';
 import { Book } from '../book/book.entity';
 import { ReadingCardService } from '../reading-card/reading-card.service';
 import { BorrowRecordService } from '../borrow-record/borrow-record.service';
+import { ReturnRecordService } from '../return-record/return-record.service';
 import { BookService } from '../book/book.service';
 
 @Injectable()
@@ -26,6 +28,9 @@ export class ReaderService {
 
     @Inject(forwardRef(() => BorrowRecordService))
     private readonly borrowRecordService: BorrowRecordService,
+
+    @Inject(forwardRef(() => ReturnRecordService))
+    private readonly returnRecordService: ReturnRecordService,
 
     @Inject(forwardRef(() => BookService))
     private readonly bookService: BookService,

@@ -6,6 +6,7 @@ import { ReaderController } from './reader.controller';
 import { UserModule } from '../user/user.module';
 import { ReadingCardModule } from '../reading-card/reading-card.module';
 import { BorrowRecordModule } from '../borrow-record/borrow-record.module';
+impott { ReturnRecordModule } from '../return-record/return-record.module';
 import { BookModule } from '../book/book.module';
 
 @Module({
@@ -13,6 +14,7 @@ import { BookModule } from '../book/book.module';
         TypeOrmModule.forFeature([Reader]),
         forwardRef(() => ReadingCardModule),
         forwardRef(() => BorrowRecordModule),
+        forwardRef(() => ReturnRecordModule),
         BookModule,
         UserModule,
     ],
